@@ -8,6 +8,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,6 +29,8 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
     String text = "Hello";
     Toolbar toolbar;
     NavigationView navigationView;
+
+    private static final String TAG = "DashActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,17 +65,13 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
 
     public void updateUser(){
         user = auth.getCurrentUser();
-        text = user.getEmail();
+       // text = user.getEmail();
         //Unique UUID For each user for Database
         myRef  = database.getReference(ROOT).child(user.getUid());
         //TODO: ADD Actual Values
         //myRef.setValue(true);
         Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
 
-        username = (TextView) findViewById(R.id.user_name);
-        drawerusername = (TextView) findViewById(R.id.drawer_user_name);
-        username.setText(user.getEmail());
-        drawerusername.setText(user.getEmail());
 
 
 
@@ -105,9 +104,8 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
             startActivityForResult(intent, 1);*/
 
         } else if (id == R.id.add_workout) {
-
-            /*Intent intent = new Intent(this, AddWorkoutManually.class);
-            startActivityForResult(intent, 2);*/
+            Intent intent = new Intent(this, AddRunActivity.class);
+            startActivity(intent);
         } else if (id == R.id.add_shoe) {
 
 

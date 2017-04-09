@@ -12,4 +12,21 @@
     <string name="navigation_drawer_open">open</string>
     <string name="navigation_drawer_close">close</string>
 
+    <string name="distanceLabel">Distance</string>
+    <string name="timeLabel">Time</string>
+    <string name="paceLabel">Pace</string>
+    <string name="dateLabel">Date</string>
+    <string name="typeLabel">Type</string>
+    <string name="feelLabel">Feel</string>
+    <string name="notesLabel">Notes</string>
+    <string name="submitLabel">SUBMIT</string>
+
+    <string-array name="type_array">
+        <item>type 1</item>
+        <item>type 2</item>
+        <item>type3</item>
+        <item>type 4</item>
+    </string-array>
+    <string name="title_activity_start_run">StartRunActivity</string>
+
 </resources>
